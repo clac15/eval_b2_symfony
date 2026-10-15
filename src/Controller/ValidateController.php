@@ -11,6 +11,7 @@ final class ValidateController extends AbstractController
     #[Route('/validate', name: 'app_validate')]
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('validate/index.html.twig');
     }
 }
